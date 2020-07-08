@@ -66,12 +66,12 @@ define(['utils',
         $('#add-job-class-notes').html(
             _.template(JobClassNotesHtml)({job: e.choice.job})            
         );
-        console.log("Job selected in Add: "+ e.choice.job)
-        if(e.choice.job=="simple_scheduler.jobs.oData_job.ODataJob"){
-          $("#test1").attr("visibility", "visible");
+        console.log("Job selected in Add: "+ e.choice.job.job_class_string)
+        if(e.choice.job.job_class_string=="simple_scheduler.jobs.oData_job.ODataJob"){
+          $("#test1").show()
         }
         else{
-          $("#test1").attr("visibility", "none");
+          $("#test1").hide();
         }
       });
 
