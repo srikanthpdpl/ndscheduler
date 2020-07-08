@@ -13,7 +13,7 @@ class CurlJob(job.JobBase):
 
     @classmethod
     def meta_info(cls):
-        return {
+        return { 
             'job_class_string': '%s.%s' % (cls.__module__, cls.__name__),
             'notes': 'This sends a HTTP request to a particular URL',
             'arguments': [

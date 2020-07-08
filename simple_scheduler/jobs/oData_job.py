@@ -32,7 +32,7 @@ class CurlJob(job.JobBase):
         print('Calling GET on url: %s' % (url))
         print("Args: --")
         for arg in args:  
-            print (arg)
+            print (arg) 
         print("KwaArgs: --")
         for kwarg in kwargs:
             print (kwarg)
