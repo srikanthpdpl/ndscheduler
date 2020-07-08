@@ -45,6 +45,7 @@ define(['utils',
 
   return Backbone.View.extend({
     initialize: function() {
+      $("#qoptions").hide();
       $('body').append(EditJobModalHtml);
 
       var jobsMetaInfo = $.parseJSON($('#jobs-meta-info').html());
@@ -64,10 +65,10 @@ define(['utils',
         );
         console.log("Job selected in Edit: "+ e.choice.job.job_class_string);
         if(e.choice.job.job_class_string=="simple_scheduler.jobs.oData_job.ODataJob"){
-          $("#test1").show();
+          $("#qoptions").show();
         }
         else{
-          $("#test1").hide();
+          $("#qoptions").hide();
         }
       });
 

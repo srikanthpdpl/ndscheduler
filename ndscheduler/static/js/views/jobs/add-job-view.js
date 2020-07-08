@@ -46,7 +46,7 @@ define(['utils',
 
   return Backbone.View.extend({
     initialize: function() {
-
+      $("#qoptions").hide();
       $('body').append(AddJobModalHtml);
       this.bindAddJobConfirmClickEvent();
 
@@ -68,10 +68,10 @@ define(['utils',
         );
         console.log("Job selected in Add: "+ e.choice.job.job_class_string)
         if(e.choice.job.job_class_string=="simple_scheduler.jobs.oData_job.ODataJob"){
-          $("#test1").show()
+          $("#qoptions").show()
         }
         else{
-          $("#test1").hide();
+          $("#qoptions").hide();
         }
       });
 
