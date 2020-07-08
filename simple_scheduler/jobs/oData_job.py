@@ -8,7 +8,7 @@ from ndscheduler.corescheduler import job
 logger = logging.getLogger(__name__)
 
 
-class CurlJob(job.JobBase):
+class ODataJob(job.JobBase):
     TIMEOUT = 10
 
     @classmethod
@@ -46,5 +46,5 @@ class CurlJob(job.JobBase):
 
 
 if __name__ == "__main__":
-    job = CurlJob.create_test_instance()
+    job = ODataJob.create_test_instance()
     job.run('http://localhost:888/api/v1/jobs')
