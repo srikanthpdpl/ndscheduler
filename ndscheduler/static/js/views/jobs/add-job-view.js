@@ -91,6 +91,16 @@ define(['utils',
         var minute = $('#input-job-minute').val();
         var args = $('#input-job-task-args').val();
 
+        var select = $('#input-job-select').val();
+        var expand = $('#input-job-expand').val();
+        var value = $('#input-job-value').val();
+        var orderby = $('#input-job-orderby').val();
+        var top = $('#input-job-top').val();
+        var skip = $('#input-job-skip').val();
+        var filter = $('#input-job-filter').val();
+
+
+
         if (!$.trim(jobName)) {
           utils.alertError('Please fill in job name');
           return;
@@ -110,7 +120,7 @@ define(['utils',
           utils.alertError('You cannot use "$". Please remove it.');
           return;
         }
-
+        
         var taskArgs = [];
         try {
           taskArgs = utils.getTaskArgs(args);
@@ -119,6 +129,15 @@ define(['utils',
               ' e.g., [1, 2, "hello"].');
           return;
         }
+        console.log(taskArgs);
+
+        taskArgs.push(select);
+        taskArgs.push(expand);
+        taskArgs.push(value);
+        taskArgs.push(orderby);
+        taskArgs.push(top);
+        taskArgs.push(skip);
+        taskArgs.push(filter);
 
         this.collection.addJob({
           job_class_string: jobTask,
